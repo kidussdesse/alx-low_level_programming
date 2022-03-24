@@ -9,15 +9,26 @@
  *
  * Return: A pointer to the resulting string dest.
  */
-char *_strncat(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int index = 0, dest_len = 0;
+	int a = 0, b = 0;
 
-	while (dest[index++])
-		dest_len++;
+	while (src[b])
+	{
+		b++;
+	}
 
-	for (index = 0; src[index] && index < n; index++)
-		dest[dest_len++] = src[index];
+	while (a < n && src[a])
+	{
+		dest[a] = src[a];
+		a++;
+	}
+
+	while (a < n)
+	{
+		dest[a] = '\0';
+		a++;
+	}
 
 	return (dest);
 }
